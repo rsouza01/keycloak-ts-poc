@@ -10,6 +10,7 @@
     "stack:restart-dev": "docker-compose -f docker-compose.yml down ; docker-compose -f docker-compose.yml up -d --build",
     "stack:start-dev": "docker-compose -f docker-compose.yml up -d --build",
     "stack:stop-dev": "docker-compose -f docker-compose.yml down",
+    "keycloak:start-dev": "docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:20.0.2 start-dev",
     "test": "npm run test:lint && npm run test:coverage",
     "test:unit": "cross-env NODE_ENV=test jest",
     "test:coverage": "npm run test:unit",
